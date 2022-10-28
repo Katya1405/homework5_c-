@@ -1,5 +1,5 @@
 ﻿
-int findMin(int[] array)          // нахождение минимального элемента массива 
+int FindMin(int[] array)          // нахождение минимального элемента массива 
 {
     int min = array[0];
     for (int i = 0; i < array.Length; i++)
@@ -10,7 +10,7 @@ int findMin(int[] array)          // нахождение минимальног
     return min;
 }
 
-int findMax(int[] array)             // нахождение максимального элемента массива 
+int FindMax(int[] array)             // нахождение максимального элемента массива 
 {
     int max = array[0];
     for (int i = 0; i < array.Length; i++)
@@ -18,10 +18,10 @@ int findMax(int[] array)             // нахождение максималь�
         if (array[i] > max)
             max = array[i];
     }
-    return (max);
+    return max;
 }
 
-int findSum(int[] array)             // нахождение суммы элементов массива 
+int FindSum(int[] array)             // нахождение суммы элементов массива 
 {
     int sum = 0;
     for (int i = 0; i < array.Length; i++)
@@ -45,29 +45,24 @@ void PrintArray(int[] array)   // вывод массива на экран
 
 int Average(int[] array)       // среднее арифметическое элементов массива 
 {
-    int average = findSum(array) / array.Length;
+    int average = FindSum(array) / array.Length;
     return average;
 }
 
-int countNegative(int[] array)        // колво отрицательных элементов в массиве
+int CountNegative(int[] array)        // колво отрицательных элементов в массиве
 {
     int count = 0;
     for (int i = 0; i < array.Length; i++)
-    {
-        if (array[i] < 0)
-            count++;
-    }
+        if (array[i] < 0) count++;
     return count;
 }
 
-int count1(int[] array)        // подсчет колва вхождений элемента в массив
+int CountOfInputs(int[] array, int element)        // подсчет колва вхождений элемента в массив
 {
-    Console.WriteLine("Введите значение: ");
-    int x = int.Parse(Console.ReadLine() ?? "0");
     int count = 0;
     for (int i = 0; i < array.Length; i++)
     {
-        if (array[i] == x)
+        if (array[i] == element)
             count++;
     }
     return count;
@@ -106,11 +101,9 @@ int countOdd(int[] array)                  // колво нечетных эле
     return count;
 }
 
-int Index(int[] array)   // Поиск индекса заданного элемента в массиве, если такого элемента в массиве нет то возвращать -1
+int Index(int[] array, int number)   // Поиск индекса заданного элемента в массиве, если такого элемента в массиве нет то возвращать -1
 
 {
-    Console.WriteLine("Введите элемент: ");
-    int number = int.Parse(Console.ReadLine() ?? "0");
     for (int i = 0; i < array.Length; i++)
     {
         if (number == array[i])
@@ -119,10 +112,8 @@ int Index(int[] array)   // Поиск индекса заданного эле�
     return -1;
 }
 
-bool Method(int[] array)                  // проверка, присутствует ли заданное число в массиве.
+bool IsThereNumber(int[] array, int x)                  // проверка, присутствует ли заданное число в массиве.
 {
-    Console.WriteLine("Введите число: ");
-    int x = int.Parse(Console.ReadLine() ?? "0");
     bool element = false;
     for (int i = 0; i < array.Length; i++)
     {
@@ -137,7 +128,7 @@ bool Method(int[] array)                  // проверка, присутст�
     return element;
 }
 
-bool Method2(int[] array)             // проверка, является ли массив отсортированным по возрастанию.
+bool SortArray(int[] array)             // проверка, является ли массив отсортированным по возрастанию.
 {
     bool element = false;
     for (int i = 1; i < array.Length; i++)
